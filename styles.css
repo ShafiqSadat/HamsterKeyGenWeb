@@ -1,0 +1,135 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #007bff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.progress-bar {
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 25px;
+    height: 35px;
+    position: relative;
+}
+
+.progress-bar div {
+    height: 100%;
+    background-color: #007bff;
+    width: 0;
+    transition: width 0.5s;
+}
+
+#progressText {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.key-item {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.key-item input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 12px;
+}
+
+.copyKeyBtn {
+    background-color: #28a745;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copyKeyBtn:hover {
+    background-color: #218838;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #777;
+}
+
+#copyStatus {
+    margin-top: 15px;
+    color: green;
+}

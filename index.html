@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Promo Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Hamster Key Generator</h1>
+        <div id="formContainer">
+            <div class="form-group" id="gameSelectGroup">
+                <label for="gameSelect">Select Game:</label>
+                <select id="gameSelect">
+                    <option value="1">Riding Extreme 3D</option>
+                    <option value="2">Chain Cube 2048</option>
+                    <option value="3">My Clone Army</option>
+                    <option value="4">Train Miner</option>
+                </select>
+            </div>
+            <div class="form-group" id="keyCountGroup">
+                <label for="keyCountSelect">Select Number of Keys:</label>
+                <select id="keyCountSelect">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button id="startBtn">Generate Keys</button>
+        </div>
+
+        <div id="progressContainer" class="hidden">
+            <div class="progress-bar">
+                <div id="progressBar"></div>
+            </div>
+            <p id="progressText">0%</p>
+            <p id="progressLog">Starting...</p>
+        </div>
+
+        <div id="keyContainer" class="hidden">
+            <h2 id="generatedKeysTitle" class="hidden">Generated Keys</h2>
+            <div id="keysList"></div>
+            <button id="copyAllBtn" class="hidden">Copy All Keys</button>
+        </div>
+
+        <p id="keyCountLabel">Number of keys:</p>
+
+        <button id="generateMoreBtn" class="hidden">Generate More Keys</button>
+        <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
+        
+        <div class="footer">
+            <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
+            <button id="sourceCode">Source code</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
