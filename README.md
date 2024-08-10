@@ -3,6 +3,9 @@
 
 This project is a web-based application for generating promo codes for various games. The application allows users to select a game, choose the number of promo codes they want to generate, and then generates the codes while showing the progress. The application also includes options to copy the generated codes to the clipboard.
 
+## ⭐ 💹 Need bulk keys? 
+- Contact me: [Telegram](https://t.me/Shafiq)
+  
 ## Features
 
 - **Game Selection**: Users can select from a list of available games.
