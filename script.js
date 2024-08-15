@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appToken: '8d1cc2ad-e097-4b86-90ef-7a27e19fb833',
             promoId: 'dc128d28-c45b-411c-98ff-ac7726fbaea4'
         }
+        
     };
 
     const startBtn = document.getElementById('startBtn');
