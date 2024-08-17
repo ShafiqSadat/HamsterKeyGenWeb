@@ -25,6 +25,38 @@ h1 {
     color: #007bff;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.game-option {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.game-option img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.game-option p {
+    font-weight: 500;
+    color: #555;
+}
+
+.game-option:hover, .game-option.selected {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -37,19 +69,41 @@ label {
     color: #555;
 }
 
-select {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff;
-    transition: border-color 0.3s;
+.key-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-select:focus {
-    border-color: #007bff;
+.key-slider input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.key-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.key-slider input[type="range"]:hover::-webkit-slider-thumb {
+    background: #0056b3;
+}
+
+#keyValue {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
 }
 
 button {

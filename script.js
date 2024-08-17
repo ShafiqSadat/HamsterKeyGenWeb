@@ -28,15 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
             promoId: 'dc128d28-c45b-411c-98ff-ac7726fbaea4'
         },
         6: {
-        name: 'Twerk Race 3D',
-        appToken: '61308365-9d16-4040-8bb0-2f4a4c69074c',
-        promoId: '61308365-9d16-4040-8bb0-2f4a4c69074c'
-    }
-        
+            name: 'Twerk Race 3D',
+            appToken: '61308365-9d16-4040-8bb0-2f4a4c69074c',
+            promoId: '61308365-9d16-4040-8bb0-2f4a4c69074c'
+        }
     };
 
+    const gameOptions = document.querySelectorAll('.game-option');
+    const keyCountGroup = document.getElementById('keyCountGroup');
+    const keyRange = document.getElementById('keyRange');
+    const keyValue = document.getElementById('keyValue');
     const startBtn = document.getElementById('startBtn');
-    const keyCountSelect = document.getElementById('keyCountSelect');
     const keyCountLabel = document.getElementById('keyCountLabel');
     const progressContainer = document.getElementById('progressContainer');
     const progressBar = document.getElementById('progressBar');
@@ -46,19 +48,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const keysList = document.getElementById('keysList');
     const copyAllBtn = document.getElementById('copyAllBtn');
     const generatedKeysTitle = document.getElementById('generatedKeysTitle');
-    const gameSelect = document.getElementById('gameSelect');
     const copyStatus = document.getElementById('copyStatus');
+    const generateMoreBtn = document.getElementById('generateMoreBtn');
     const sourceCode = document.getElementById('sourceCode');
-    const gameSelectGroup = document.getElementById('gameSelectGroup');
-    const keyCountGroup = document.getElementById('keyCountGroup');
+
+    let selectedGame = null;
+
+    gameOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            gameOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedGame = option.dataset.game;
+
+            keyCountGroup.classList.remove('hidden');
+            startBtn.classList.remove('hidden');
+        });
+    });
+
+    keyRange.addEventListener('input', () => {
+        keyValue.innerText = keyRange.value;
+    });
 
     startBtn.addEventListener('click', async () => {
-        const gameChoice = parseInt(gameSelect.value);
-        const keyCount = parseInt(keyCountSelect.value);
+        const keyCount = parseInt(keyRange.value);
+        if (!selectedGame) {
+            alert('Please select a game first.');
+            return;
+        }
+
+        const gameChoice = parseInt(selectedGame);
         const game = games[gameChoice];
 
         // Hide the form sections
-        gameSelectGroup.style.display = 'none';
+        document.querySelector('.grid-container').style.display = 'none';
         keyCountGroup.style.display = 'none';
 
         keyCountLabel.innerText = `Number of keys: ${keyCount}`;
@@ -70,10 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
         keysList.innerHTML = '';
-        keyCountSelect.classList.add('hidden');
-        gameSelect.classList.add('hidden');
-        startBtn.classList.add('hidden');
         copyAllBtn.classList.add('hidden');
+        startBtn.classList.add('hidden');
         startBtn.disabled = true;
 
         let progress = 0;
@@ -137,8 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.copyKeyBtn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const key = event.target.getAttribute('data-key');
-                
-                // Check if navigator.clipboard is available
+
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(key).then(() => {
                         copyStatus.classList.remove('hidden');
@@ -147,10 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.error('Failed to copy text: ', err);
                     });
                 } else {
-                    // Fallback method for non-HTTPS environments
                     const textArea = document.createElement('textarea');
                     textArea.value = key;
-                    textArea.style.position = 'fixed';  // Avoid scrolling to bottom of page
+                    textArea.style.position = 'fixed';
                     textArea.style.top = '0';
                     textArea.style.left = '0';
                     document.body.appendChild(textArea);
@@ -185,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 const textArea = document.createElement('textarea');
                 textArea.value = keysText;
-                textArea.style.position = 'fixed';  // Avoid scrolling to bottom of page
+                textArea.style.position = 'fixed';
                 textArea.style.top = '0';
                 textArea.style.left = '0';
                 document.body.appendChild(textArea);
@@ -213,25 +231,21 @@ document.addEventListener('DOMContentLoaded', () => {
         progressLog.innerText = 'Complete';
 
         startBtn.classList.remove('hidden');
-        keyCountSelect.classList.remove('hidden');
-        gameSelect.classList.remove('hidden');
+        keyCountGroup.classList.remove('hidden');
+        document.querySelector('.grid-container').style.display = 'grid';
         startBtn.disabled = false;
     });
 
-    document.getElementById('generateMoreBtn').addEventListener('click', () => {
+    generateMoreBtn.addEventListener('click', () => {
         progressContainer.classList.add('hidden');
         keyContainer.classList.add('hidden');
         startBtn.classList.remove('hidden');
-        keyCountSelect.classList.remove('hidden');
-        gameSelect.classList.remove('hidden');
+        keyCountGroup.classList.remove('hidden');
+        document.querySelector('.grid-container').style.display = 'grid';
         generatedKeysTitle.classList.add('hidden');
         copyAllBtn.classList.add('hidden');
         keysList.innerHTML = '';
         keyCountLabel.innerText = 'Number of keys:';
-        
-        // Show the form sections again
-        gameSelectGroup.style.display = 'block';
-        keyCountGroup.style.display = 'block';
     });
 
     sourceCode.addEventListener('click', () => {
