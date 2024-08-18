@@ -126,12 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             for (let i = 0; i < game.attempts; i++) {
-                await sleep(game.timing * delayRandom());
                 const hasCode = await emulateProgress(clientToken, game.promoId);
                 updateProgress((100 / game.attempts) / keyCount, `Emulating progress ${i + 1}/${game.attempts}...`);
                 if (hasCode) {
                     break;
                 }
+                await sleep(game.timing);  // Sleep after each attempt to wait before the next event registration
             }
 
             try {
@@ -264,8 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-    const delayRandom = () => Math.random() / 3 + 1;
 
     const copyToClipboard = (text) => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
