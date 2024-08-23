@@ -1,5 +1,6 @@
 # Hamster Promo Code Generator
-![image](https://github.com/user-attachments/assets/3488f975-7188-4651-903b-7cccf1200056)
+![image](https://github.com/user-attachments/assets/454fe5bd-f84c-461b-9d15-f58dcb30fefc)
+
 
 
 This project is a web-based application for generating promo codes for various games. The application allows users to select a game, choose the number of promo codes they want to generate, and then generates the codes while showing the progress. The application also includes options to copy the generated codes to the clipboard.
