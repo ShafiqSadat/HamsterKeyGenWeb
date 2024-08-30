@@ -9,6 +9,33 @@ body {
     margin: 0;
 }
 
+/* Add a max height and enable scrolling for the game options */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    max-height: 300px; /* Adjust this height based on your layout needs */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.game-option {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Ensure the selected game stands out */
+.game-option.selected {
+    transform: scale(1.05);
+    border-color: #007bff;
+    background-color: #f0f8ff; /* Optional: Slight background color change */
+}
+
 .container {
     background: #ffffff;
     border-radius: 10px;
@@ -25,21 +52,6 @@ h1 {
     color: #007bff;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.game-option {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s, border-color 0.3s;
-}
 
 .game-option img {
     width: 100%;
