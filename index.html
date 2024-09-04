@@ -6,6 +6,8 @@
     <title>Hamster Key Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
@@ -15,13 +17,13 @@
             <img src="https://cdn.hamsterkombat.io/fluff/image.webp" alt="Fluff"">
             <p>Fluff Crusade</p>
             </div>
-            <div class="game-option" data-game="11">
-            <img src="https://cdn.hamsterkombat.io/zoopolis/image.webp" alt="Zoopolis"">
-            <p>Zoopolis</p>
-            </div>
             <div class="game-option" data-game="10">
             <img src="https://cdn.hamsterkombat.io/tile_trio/image.webp" alt="CafeDash"">
             <p>Tile Trio</p>
+            </div>
+			<div class="game-option" data-game="11">
+            <img src="https://cdn.hamsterkombat.io/zoopolis/image.webp" alt="Zoopolis"">
+            <p>Zoopolis</p>
             </div>
             <div class="game-option" data-game="8">
             <img src="https://cdn.hamsterkombat.io/mow_trim/image.webp" alt="Polysphere">
@@ -80,6 +82,7 @@
         <div class="footer">
             <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
             <button id="sourceCode">Source code</button>
+			<button id="themeToggleBtn" onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
         </div>
     </div>
 
