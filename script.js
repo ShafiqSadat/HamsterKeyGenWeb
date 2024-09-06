@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             keyCountGroup.classList.remove('hidden');
             startBtn.classList.remove('hidden');
+            keyCountLabel.classList.add('hidden');
     
             // Smooth scroll to the key count group
             keyCountGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -192,7 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.grid-container').style.display = 'none';
         keyCountGroup.classList.add('hidden');
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.classList.remove('hidden');
+        keyCountLabel.innerText = `Number of key(s): ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
