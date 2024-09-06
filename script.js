@@ -209,11 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let progress = 0;
         const updateProgress = (increment, message) => {
-            progress += increment;
-            progressBar.style.width = `${progress}%`;
-            progressText.innerText = `${progress}%`;
+            progress = Math.min(100, Math.round(progress + increment));
+            progressBar.style.width = progressText.innerText = `${progress}%`;
             progressLog.innerText = message;
-        };
+        };        
 
         const generateKeyProcess = async () => {
             const clientId = generateClientId();
