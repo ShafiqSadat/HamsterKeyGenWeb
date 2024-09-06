@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide the form sections
         document.querySelector('.grid-container').style.display = 'none';
-        keyCountGroup.style.display = 'none';
+        keyCountGroup.classList.add('hidden');
 
         keyCountLabel.innerText = `Number of keys: ${keyCount}`;
 
