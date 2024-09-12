@@ -52,17 +52,17 @@
     --box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* Ensure body scrolls */
+/* General body styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align content to the top */
-    min-height: 100vh; /* Ensure the page height is always at least 100% of the viewport */
+    align-items: flex-start;
+    min-height: 100vh;
     margin: 0;
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-y: auto;
 }
 
 .container {
@@ -81,15 +81,15 @@ h1 {
     color: var(--heading-color);
 }
 
-/* Add a max height and enable scrolling for the game options */
+/* Grid container with responsiveness */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
     margin-bottom: 20px;
-    max-height: 600px; /* Adjust this height based on your layout needs */
+    max-height: 600px;
     overflow-y: auto;
-    padding: 10px 10px 10px 10px
+    padding: 10px;
 }
 
 .game-option {
@@ -103,41 +103,31 @@ h1 {
     color: var(--text-color);
 }
 
-.game-option:hover {
-    border-color: var(--hover-border-color);
-    transform: scale(1.03);
-}
-
-/* Style for selected game option */
-.game-option.selected {
-    transform: scale(1.05); /* Slight scale */
-    border-color: var(--selected-bg-color);
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); /* Gradient background */
-    color: var(--selected-text-color) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-}
-
 .game-option img {
     width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
 .game-option p {
-    font-size: 16px; /* Increase font size */
-    font-weight: 600; /* Make it bold */
+    font-size: 16px;
+    font-weight: 600;
 }
 
-/* Optional hover effect on game options */
 .game-option:hover {
     transform: scale(1.05);
     border-color: var(--hover-border-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.game-option.selected p {
-    color: white; /* Ensure text is visible on the new background */
+.game-option.selected {
+    transform: scale(1.05);
+    border-color: var(--selected-bg-color);
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: var(--selected-text-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
@@ -150,43 +140,6 @@ label {
     margin-bottom: 8px;
     font-weight: 500;
     color: var(--label-color);
-}
-
-.key-slider {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.key-slider input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 8px;
-    border-radius: 5px;
-    background: var(--slider-bg);
-    outline: none;
-    transition: background 0.3s;
-}
-
-.key-slider input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--slider-thumb);
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.key-slider input[type="range"]:hover::-webkit-slider-thumb {
-    background: var(--slider-thumb-hover);
-}
-
-#keyValue {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--heading-color);
 }
 
 button {
@@ -205,63 +158,6 @@ button:hover {
     background-color: var(--button-hover);
 }
 
-.hidden {
-    display: none;
-}
-
-.progress-bar {
-    background-color: var(--progress-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 25px;
-    height: 35px;
-    position: relative;
-}
-
-.progress-bar div {
-    height: 100%;
-    background-color: var(--progress-fill);
-    width: 0;
-    transition: width 0.5s;
-}
-
-#progressText {
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-.key-item {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.key-item input {
-    flex: 1;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid var(--input-border);
-    border-radius: 8px;
-    margin-right: 12px;
-    background-color: var(--input-bg);
-    color: var(--text-color);
-}
-
-.copyKeyBtn {
-    background-color: var(--copy-button-bg);
-    border: none;
-    padding: 12px 20px;
-    color: var(--button-color);
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.copyKeyBtn:hover {
-    background-color: var(--copy-button-hover);
-}
-
 .footer {
     margin-top: 25px;
     font-size: 14px;
@@ -271,4 +167,8 @@ button:hover {
 #copyStatus {
     margin-top: 15px;
     color: var(--copy-status-color);
+}
+
+.hidden {
+    display: none;
 }
