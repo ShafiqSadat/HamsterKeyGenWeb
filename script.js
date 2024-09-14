@@ -124,21 +124,28 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Fluff Crusade',
             appToken: '112887b0-a8af-4eb2-ac63-d82df78283d9',
             promoId: '112887b0-a8af-4eb2-ac63-d82df78283d9',
-            timing: 20000, // 40 seconds
+            timing: 20000, // 20 seconds
             attempts: 30,
         },
         13: {
             name: 'Stone Age',
             appToken: '04ebd6de-69b7-43d1-9c4b-04a6ca3305af',
             promoId: '04ebd6de-69b7-43d1-9c4b-04a6ca3305af',
-            timing: 20000, // 40 seconds
+            timing: 20000, // 20 seconds
             attempts: 30,
         },
        14: {
             name: 'Bouncemasters',
             appToken: 'bc72d3b9-8e91-4884-9c33-f72482f0db37',
             promoId: 'bc72d3b9-8e91-4884-9c33-f72482f0db37',
-            timing: 20000, // 40 seconds
+            timing: 20000, // 20 seconds
+            attempts: 30,
+        },
+        15: {
+            name: 'Hide Ball',
+            appToken: '4bf4966c-4d22-439b-8ff2-dc5ebca1a600',
+            promoId: '4bf4966c-4d22-439b-8ff2-dc5ebca1a600',
+            timing: 40000, // 30 seconds
             attempts: 30,
         }
     };
