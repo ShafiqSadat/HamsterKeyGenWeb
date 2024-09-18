@@ -147,6 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
             promoId: '4bf4966c-4d22-439b-8ff2-dc5ebca1a600',
             timing: 40000, // 30 seconds
             attempts: 30,
+        },
+        16: {
+            name: 'Pin Out Master',
+            appToken: 'd2378baf-d617-417a-9d99-d685824335f0',
+            promoId: 'd2378baf-d617-417a-9d99-d685824335f0',
+            timing: 20000, // 30 seconds
+            attempts: 30,
         }
     };
 
