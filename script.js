@@ -161,6 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
             promoId: '4bdc17da-2601-449b-948e-f8c7bd376553',
             timing: 20000, // 30 seconds
             attempts: 30,
+        },
+        18: {
+            name: 'Infected Frontier',
+            appToken: 'eb518c4b-e448-4065-9d33-06f3039f0fcb',
+            promoId: 'eb518c4b-e448-4065-9d33-06f3039f0fcb',
+            timing: 20000, // 30 seconds
+            attempts: 30,
         }
     };
 
