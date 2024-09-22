@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             keyCountGroup.classList.remove('hidden');
             startBtn.classList.remove('hidden');
+            keyCountLabel.classList.add('hidden');
     
             // Smooth scroll to the key count group
             keyCountGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -239,9 +240,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide the form sections
         document.querySelector('.grid-container').style.display = 'none';
-        keyCountGroup.style.display = 'none';
+        keyCountGroup.classList.add('hidden');
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.classList.remove('hidden');
+        keyCountLabel.innerText = `Number of key(s): ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
@@ -256,11 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let progress = 0;
         const updateProgress = (increment, message) => {
-            progress += increment;
-            progressBar.style.width = `${progress}%`;
-            progressText.innerText = `${progress}%`;
+            progress = Math.min(100, Math.round(progress + increment));
+            progressBar.style.width = progressText.innerText = `${progress}%`;
             progressLog.innerText = message;
-        };
+        };        
 
         const generateKeyProcess = async () => {
             const clientId = generateClientId();
